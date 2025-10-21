@@ -28,17 +28,21 @@ Prerequisites
 
 Installation and Setup (Using Docker)
 
-1.Clone the repository:
+**_1.Clone the repository_**
 
     git clone https://github.com/lesterfd95/vit-fi.git
 
 The environment is built upon the official NVIDIA CUDA development image (nvidia/cuda:12.9.1-devel-ubuntu22.04) and installs project-specific Python dependencies from requirements.txt.
 
-2.Build the Docker Image: Use the provided Dockerfile and tag the resulting image as vit_fi:1.0, as required by the execution script.
+**_2.Build the Docker Image_** 
+
+Use the provided Dockerfile and tag the resulting image as vit_fi:1.0, as required by the execution script.
 
     docker build -t vit_fi:1.0.
 
-3.Launch the Container using the Script: Execute the provided launch script (run_container.sh) to start the container with optimized resources.
+**_3.Launch the Container_**  
+
+Execute the provided launch script (run_container.sh) to start the container with optimized resources.
 
     bash run_container.sh
 
@@ -48,7 +52,7 @@ Resource Allocation: The script allocates all available GPUs (--gpus all) and se
 
 Volume Mount: A bind mount is established (src="$(pwd)"/scripts,target=/app) to map the local scripts directory into the container's working directory (/app). This allows for direct execution and modification of the research scripts from the host machine.
 
-4.Running Core Experiments
+**_4.Running Core Experiments_**
 
 The core functionality is accessed via wrapper scripts that utilize the main Python file (tt_inj.py) and pass configuration arguments:
 
