@@ -22,3 +22,8 @@ Thumbs.db
 # Docker
 *.pid
 *.tar
+
+# bash 
+run_detached_test.sh
+run_detached_train_test.sh
+slurm_run_detached_train_test.sh
