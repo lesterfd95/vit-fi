@@ -56,18 +56,18 @@ Volume Mount: A bind mount is established (src="$(pwd)"/scripts,target=/app) to 
 
 The core functionality is accessed via wrapper scripts that utilize the main Python file (tt_inj.py) and pass configuration arguments:
 
-Training and Testing (train_test.sh):
+- Training and Testing (train_test.sh):
 
   Purpose: Launches a full training run and subsequent testing, potentially including Fault-Aware Training (FAT) if configured.
-  
+    
   Usage: Requires a log name and the model name to be created.
-  
+    
   Command Example (Inside Container):
   
-    ./train_test.sh my_new_log_name ViT_FAT_Model
+      ./train_test.sh my_new_log_name ViT_FAT_Model
 
 
-Testing Pre-Trained Model (test.sh):
+- Testing Pre-Trained Model (test.sh):
 
   Purpose: Executes a set of tests (e.g., vulnerability analysis or mitigation evaluation) on an already trained model or checkpoint located in the checkpoints folder.
   
@@ -75,6 +75,6 @@ Testing Pre-Trained Model (test.sh):
   
   Command Example (Inside Container):
   
-    ./test.sh baseline_ber_sweep ViT_Baseline_Model
+      ./test.sh baseline_ber_sweep ViT_Baseline_Model
 
 Customization: Users can create their own custom launching scripts by examining train_test.sh and test.sh, which pass specific arguments to the principal Python execution file (tt_inj.py).
