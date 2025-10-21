@@ -52,6 +52,10 @@ Resource Allocation: The script allocates all available GPUs (--gpus all) and se
 
 Volume Mount: A bind mount is established (src="$(pwd)"/scripts,target=/app) to map the local scripts directory into the container's working directory (/app). This allows for direct execution and modification of the research scripts from the host machine.
 
+Initial Setup: During the first use of the main execution scripts, the project will automatically create the necessary organizational folders: logs, checkpoints (for trained models/checkpoints), and download the CIFAR-10 dataset.
+
+Kernel Compilation: The custom CUDA kernel is integrated and loaded automatically by the framework when needed. No manual compilation step is required by the user after container launch.
+
 **_4.Running Core Experiments_**
 
 The core functionality is accessed via wrapper scripts that utilize the main Python file (tt_inj.py) and pass configuration arguments:
